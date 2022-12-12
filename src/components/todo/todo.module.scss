@@ -1,0 +1,129 @@
+@import '../../styles/mixin.scss';
+
+.main_container{
+    position: relative;
+    width: 50%;
+    height: 700px;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $shadow;
+    padding: 15px;
+    border-radius: 20px;
+    .input_field{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-height: 60px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 20px;
+        input{
+            height: 100%;
+            width: 100%;
+            background: inherit;
+            border: 2px solid $details;
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 0 15px;
+            padding-left: 50px;
+            color: #FFFFFF;
+            transition: 0.2s ease-in-out;
+            &:focus{
+                border: 2px solid $second;
+
+            }
+        }
+        .add_element{
+            position: absolute;
+            right: 15px;
+            width: 40px;
+            min-height: 40px;
+            font-size: 24px;
+            background: $blocks;
+            border-radius: 50%;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .arrow{
+            position: absolute;
+            height: 100%;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            font-size: 25px;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.todo_item{
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    min-height: 50px;
+    background: $blocks;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+    border-radius: 5px;
+    &:last-child{
+        margin-bottom: 50px;
+    }
+    .complited{
+        position: absolute;
+        left: 10px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+
+    }
+    .todo_item_closetab{
+        position: absolute;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        right: 15px;
+        font-size: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.items_blocks{
+    height: 100%;
+    overflow-y: auto;
+}
+.sorting_menu{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px;
+    backdrop-filter: blur(5px);
+    border-top: 2px solid $details;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    overflow: hidden;
+    padding: 15px;
+    >*{
+        cursor: pointer;
+        span{
+            color: #FFFFFF;
+        }
+        &.active{
+            span{
+                color: $second;
+            }
+        }
+    }
+    .clear_all{
+        position: absolute;
+        right: 0;
+    }
+}
