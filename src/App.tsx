@@ -1,5 +1,6 @@
 import Header from './components/header/header';
 import Todo from './components/todo/todo';
+import DateContainer from './date_container/date_container';
 
 function App() {
     return (
@@ -7,6 +8,7 @@ function App() {
             <Header />
             <section className='container central-block'>
                 <Todo />
+                <DateContainer />
             </section>
         </div>
     );

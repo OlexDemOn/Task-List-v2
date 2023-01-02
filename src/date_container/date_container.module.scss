@@ -1,0 +1,13 @@
+@import '../styles//mixin.scss';
+
+.date_container{
+    width: 50%;
+    height: 100%;
+    box-shadow: $shadow;
+    border-radius: 20px;
+    padding: 15px;
+    *{
+        background: inherit;
+        color: #FFFFFF;
+    }
+}

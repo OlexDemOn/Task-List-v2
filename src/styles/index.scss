@@ -45,10 +45,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 ul, li{
     list-style: none;
     margin: 0;
@@ -57,7 +53,6 @@ ul, li{
 input {
   all: unset;
 }
-
 
 .container {
     width: 100%;
@@ -75,6 +70,7 @@ input {
 .central-block{
     display: flex;
     justify-content: space-between;
+    column-gap: 40px;
     flex: 0 1 auto;
     @include adaptiv("margin-top", 50, 20);
     @include adaptiv("margin-bottom", 50, 20);
