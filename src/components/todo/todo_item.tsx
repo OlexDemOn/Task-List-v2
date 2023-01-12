@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styles from './todo.module.scss'
 import { motion, Reorder } from 'framer-motion';
 import { AiOutlineCheck } from 'react-icons/ai'
@@ -13,7 +12,7 @@ export default function TodoItem(props: any) {
     const state = props.state;
     const setData = props.setData;
 
-    function deleteItem(el: ITodoProps) {
+    function DeleteItem(el: ITodoProps) {
         const newItems = [...data];
 
         const index = newItems.indexOf(el);
@@ -23,14 +22,14 @@ export default function TodoItem(props: any) {
         setData(newItems);
     }
 
-    function changeItemsState(el: ITodoProps, state: number) {
+    function ChangeItemsState(el: ITodoProps, state: number) {
         const newItems = [...data];
         const index = newItems.indexOf(el);
         newItems[index].progression = state;
         setData(newItems);
     }
 
-    const changeItemsDate = (el: ITodoProps, date: Date) => {
+    const ChangeItemsDate = (el: ITodoProps, date: Date) => {
         const newItems = [...data];
         const index = newItems.indexOf(el);
         newItems[index].date = date;
@@ -48,15 +47,15 @@ export default function TodoItem(props: any) {
                     exit={{ opacity: 0 }}
                 >
                     <span>{item.name}</span>
-                    <div className={styles.complited} onClick={() => changeItemsState(item, item.progression === 2 ? 1 : 2)}>
+                    <div className={styles.complited} onClick={() => ChangeItemsState(item, item.progression === 2 ? 1 : 2)}>
                         <AiOutlineCheck color={item.progression === 2 ? "#E94560" : "#9CFF2E"} />
                     </div>
                     <div className={styles.calendar}>
-                        <Calendar date={item.date} el={item} changeItemsDate={changeItemsDate!} />
+                        <Calendar date={item.date} el={item} ChangeItemsDate={ChangeItemsDate!} />
                     </div>
                     <motion.div className={styles.todo_item_closetab}
                         whileHover={{ scale: 1.1 }}
-                        onClick={() => { deleteItem(item) }}
+                        onClick={() => { DeleteItem(item) }}
                     >
                         <ImBin2 color='#FFFFFF' />
                     </motion.div>

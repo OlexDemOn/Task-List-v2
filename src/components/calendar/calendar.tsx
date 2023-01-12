@@ -6,8 +6,7 @@ import { ImCalendar } from 'react-icons/im';
 
 export default function Calendar(props: any) {
 
-    console.log(props.date)
-    console.log(new Date())
+    console.log()
 
     const ExampleCustomInput = forwardRef(({ value, onClick, children }: any, ref: any) => (
         <button onClick={onClick} ref={ref}
@@ -25,8 +24,8 @@ export default function Calendar(props: any) {
 
     return (
         <DatePicker
-            // selected={props.date}
-            onChange={(date: Date) => props.changeItemsDate(props.el, date!)}
+            selected={new Date(props.date)}
+            onChange={(date: Date) => props.ChangeItemsDate(props.el, date!)}
             customInput={<ExampleCustomInput />}
         />
     )
